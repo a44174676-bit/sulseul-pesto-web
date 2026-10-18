@@ -1,0 +1,3 @@
+# 창업자 승인 후 정식 공개 시 Allow: / 로 변경하세요.
+User-agent: *
+Disallow: /
