@@ -18,6 +18,7 @@ import { products } from "./data/products";
 const navigation = [
   ["story", "브랜드 이야기"],
   ["products", "우리의 페스토"],
+  ["development", "제품 개발 방향"],
   ["table", "한 스푼의 일상"],
   ["partners", "함께하기"],
 ] as const;
@@ -314,10 +315,70 @@ function Home() {
           안내합니다. 현재 판매하지 않습니다.
         </p>
       </section>
+      <section id="development" className="section products" aria-labelledby="development-title">
+        <div className="section-heading row">
+          <div>
+            <p className="eyebrow">03 / WHAT WE ARE DEVELOPING</p>
+            <h2 id="development-title">
+              한국의 나물을,
+              <br />
+              더 편리한 소스로.
+            </h2>
+          </div>
+          <p>
+            참나물·참기름과 다시마 분말, 깻잎·들기름과 표고버섯 분말의
+            조합을 연구하고 있습니다. 지역 원료의 확보와 제품 규격은 확인 중입니다.
+          </p>
+        </div>
+        <div className="usage-grid">
+          {[
+            {
+              icon: Salad,
+              title: "한 번에 쓰는 드레싱",
+              sub: "SMALL DRESSING · DEVELOPMENT CONCEPT",
+              text: "빵과 샐러드에 간편하게 곁들일 수 있도록 15~20mL 소용량 병 형태를 검토하고 있습니다.",
+              kind: "salad",
+            },
+            {
+              icon: Wheat,
+              title: "짜서 바르는 페이스트",
+              sub: "SQUEEZABLE PASTE · DEVELOPMENT CONCEPT",
+              text: "식사빵과 샌드위치에 필요한 만큼 바를 수 있도록 튜브형 제형과 포장 방식의 적합성을 검토하고 있습니다.",
+              kind: "bread",
+            },
+            {
+              icon: Utensils,
+              title: "교체형 소스 카트리지",
+              sub: "REUSABLE APPLICATOR · RESEARCH CONCEPT",
+              text: "소스 카트리지와 도포 도구를 결합한 사용 방식을 연구하고 있습니다. 완성·검증된 제품이 아닙니다.",
+              kind: "pasta",
+            },
+          ].map(({ icon: Icon, title, sub, text, kind }, i) => (
+            <article className="usage-card" key={title}>
+              <div className={`food-art ${kind}`} aria-hidden="true">
+                <div className="plate">
+                  <Icon strokeWidth={0.8} />
+                  <span className="food-leaf">
+                    <Leaf />
+                  </span>
+                </div>
+                <span className="food-no">0{i + 1}</span>
+              </div>
+              <p className="eyebrow">{sub}</p>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <p className="product-disclaimer">
+          모두 개발·검토 단계의 구상이며 실제 생산, 포장 사양, 원료 원산지, 소비기한,
+          기술 검증 및 특허 등록을 의미하지 않습니다. 판매 중인 제품이 아닙니다.
+        </p>
+      </section>
       <section id="table" className="section table">
         <div className="section-heading row">
           <div>
-            <p className="eyebrow">03 / ON YOUR TABLE</p>
+            <p className="eyebrow">04 / ON YOUR TABLE</p>
             <h2>
               한 스푼이면,
               <br />
@@ -377,7 +438,7 @@ function Home() {
       </section>
       <section id="partners" className="partners">
         <div>
-          <p className="eyebrow">04 / GROW TOGETHER</p>
+          <p className="eyebrow">05 / GROW TOGETHER</p>
           <h2>
             좋은 재료의 가능성,
             <br />
@@ -412,7 +473,7 @@ function Home() {
       </section>
       <section id="contact" className="section contact">
         <div>
-          <p className="eyebrow">05 / SAY HELLO</p>
+          <p className="eyebrow">06 / SAY HELLO</p>
           <h2>슬슬, 이야기 나눠요.</h2>
           <p>브랜드와 제품 개발, 협력에 대한 문의를 기다립니다.</p>
         </div>
